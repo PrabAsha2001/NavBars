@@ -1,0 +1,67 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+}
+.hamburger{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border:3px solid #fff; */
+
+}
+/* create the middle line  */
+.menu-btn{
+    width: 50px;
+    height: 6px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(34, 30, 21);
+    transition: all .5s ease-in-out;
+}
+
+/* create the upper line and bottom line */
+.menu-btn::before,
+.menu-btn::after{
+    content: '';
+    position: absolute;
+    width:50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgb(34, 30, 21);
+    transition: all .5s ease-in-out;
+}
+
+.menu-btn::before{
+    transform: translateY(-16px);
+}
+.menu-btn::after{
+    transform: translateY(16px);
+}
+
+
+/* ANIMATION */
+.hamburger.open .menu-btn{
+    transform: translate(-50px);
+    background: transparent;
+    box-shadow: none;
+} 
+.hamburger.open .menu-btn::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.hamburger.open .menu-btn::after{
+    transform: rotate(-45deg) translate(35px,35px);
+}
